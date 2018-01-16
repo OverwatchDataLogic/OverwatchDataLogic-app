@@ -1,3 +1,5 @@
+import { exampleService } from '../services'
+
 export default {
   namespace: 'example',
 
@@ -5,14 +7,13 @@ export default {
 
   subscriptions: {
     setup({ dispatch, history }) {
-      // eslint-disable-line
+      dispatch({ type: 'fetch', payload: {} })
     }
   },
 
   effects: {
     *fetch({ payload }, { call, put }) {
-      // eslint-disable-line
-      yield put({ type: 'save' })
+      yield call(exampleService.query)
     }
   },
 

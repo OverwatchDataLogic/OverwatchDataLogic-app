@@ -1,8 +1,22 @@
-import fetch from 'dva/fetch'
+import axios from 'axios'
 
-function parseJSON(response) {
-  return response.json()
-}
+axios.interceptors.request.use(
+  config => {
+    return config
+  },
+  error => {
+    return Promise.reject(error)
+  }
+)
+
+axios.interceptors.response.use(
+  response => {
+    return response
+  },
+  error => {
+    return Promise.resolve(error.response)
+  }
+)
 
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
@@ -14,17 +28,34 @@ function checkStatus(response) {
   throw error
 }
 
-/**
- * Requests a URL, returning a promise.
- *
- * @param  {string} url       The URL we want to request
- * @param  {object} [options] The options we want to pass to "fetch"
- * @return {object}           An object containing either "data" or "err"
- */
-export default function request(url, options) {
-  return fetch(url, options)
-    .then(checkStatus)
-    .then(parseJSON)
-    .then(data => ({ data }))
-    .catch(err => ({ err }))
+export default {
+  post(url, data) {
+    return axios({
+      method: 'post',
+      url,
+      data,
+      timeout: 10000,
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest',
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+      }
+    })
+      .then(checkStatus)
+      .then(data => ({ data }))
+      .catch(err => ({ err }))
+  },
+  get(url, params) {
+    return axios({
+      method: 'get',
+      url,
+      params,
+      timeout: 10000,
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest'
+      }
+    })
+      .then(checkStatus)
+      .then(data => ({ data }))
+      .catch(err => ({ err }))
+  }
 }
