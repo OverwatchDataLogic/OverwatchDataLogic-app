@@ -1,4 +1,6 @@
-# 前端开发指南
+# 前端开发风格指南
+
+本项目采用React开发，基于[dva](!https://github.com/dvajs/dva)前端开发框架。
 
 ## 开发工具
 
