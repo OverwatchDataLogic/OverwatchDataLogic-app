@@ -1,9 +1,16 @@
 import React from 'react'
-import { Router, Route, Switch } from 'dva/router'
+import { Route, Switch, routerRedux } from 'dva/router'
 import dynamic from 'dva/dynamic'
-import IndexPage from './routes/IndexPage'
+import App from './routes/app'
+
+const { ConnectedRouter } = routerRedux
 
 function RouterConfig({ history, app }) {
+  const IndexPage = dynamic({
+    app,
+    models: () => [import('./models/example')],
+    component: () => import('./routes/IndexPage')
+  })
   const ProductsPage = dynamic({
     app,
     models: () => [import('./models/products')],
@@ -11,12 +18,14 @@ function RouterConfig({ history, app }) {
   })
 
   return (
-    <Router history={history}>
-      <Switch>
-        <Route path="/" exact component={IndexPage} />
-        <Route path="/products" exact component={ProductsPage} />
-      </Switch>
-    </Router>
+    <ConnectedRouter history={history}>
+      <App>
+        <Switch>
+          <Route path="/" exact component={IndexPage} />
+          <Route path="/products" exact component={ProductsPage} />
+        </Switch>
+      </App>
+    </ConnectedRouter>
   )
 }
 

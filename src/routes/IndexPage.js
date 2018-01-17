@@ -4,7 +4,7 @@ import styles from './IndexPage.css'
 
 const IndexPage = ({ dispatch }) => {
   return (
-    <div className={styles.normal}>
+    <div>
       <h1 className={styles.title}>Yay! Welcome to dva!</h1>
       <div style={{ fontSize: 24 }}>
         <a href="/products">/Products</a>

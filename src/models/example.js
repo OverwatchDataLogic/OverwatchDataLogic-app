@@ -1,3 +1,4 @@
+import { routerRedux } from 'dva/router'
 import { exampleService } from '../services'
 
 export default {
@@ -17,6 +18,11 @@ export default {
     *fetch({ payload }, { call, put }) {
       const data = yield call(exampleService.query)
       console.log(data)
+      // yield put(
+      //   routerRedux.push({
+      //     pathname: '/dashboard'
+      //   })
+      // )
     }
   },
 

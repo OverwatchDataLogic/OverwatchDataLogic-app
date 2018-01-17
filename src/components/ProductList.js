@@ -19,7 +19,13 @@ const ProductList = ({ onDelete, products }) => {
       }
     }
   ]
-  return <Table dataSource={products} columns={columns} />
+  return (
+    <Table
+      rowKey={products => products.id}
+      dataSource={products}
+      columns={columns}
+    />
+  )
 }
 
 ProductList.propTypes = {
