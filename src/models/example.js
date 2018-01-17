@@ -3,7 +3,9 @@ import { exampleService } from '../services'
 export default {
   namespace: 'example',
 
-  state: {},
+  state: {
+    list: []
+  },
 
   subscriptions: {
     setup({ dispatch, history }) {
@@ -13,7 +15,8 @@ export default {
 
   effects: {
     *fetch({ payload }, { call, put }) {
-      yield call(exampleService.query)
+      const data = yield call(exampleService.query)
+      console.log(data)
     }
   },
 

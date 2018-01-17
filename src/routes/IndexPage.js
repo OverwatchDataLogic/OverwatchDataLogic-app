@@ -2,10 +2,13 @@ import React from 'react'
 import { connect } from 'dva'
 import styles from './IndexPage.css'
 
-function IndexPage() {
+const IndexPage = ({ dispatch }) => {
   return (
     <div className={styles.normal}>
       <h1 className={styles.title}>Yay! Welcome to dva!</h1>
+      <div style={{ fontSize: 24 }}>
+        <a href="/products">/Products</a>
+      </div>
       <div className={styles.welcome} />
       <ul className={styles.list}>
         <li>
