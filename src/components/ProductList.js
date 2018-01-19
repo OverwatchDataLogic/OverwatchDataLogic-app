@@ -2,8 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Table, Popconfirm, Button } from 'antd'
 
-const ProductList = ({ onDelete, products }) => {
+const ProductList = ({ onDelete, onCreate, onUpdate, products }) => {
   const columns = [
+    {
+      title: 'ID',
+      dataIndex: 'id'
+    },
     {
       title: 'Name',
       dataIndex: 'name'
@@ -12,25 +16,33 @@ const ProductList = ({ onDelete, products }) => {
       title: 'Actions',
       render: (text, record) => {
         return (
-          <Popconfirm title="Delete?" onConfirm={() => onDelete(record.id)}>
-            <Button>Delete</Button>
+          <Popconfirm title="删除?" onConfirm={() => onDelete(record.id)}>
+            <Button>删除</Button>
           </Popconfirm>
         )
       }
     }
   ]
   return (
-    <Table
-      rowKey={products => products.id}
-      dataSource={products}
-      columns={columns}
-    />
+    <div>
+      <Table
+        rowKey={products => products.id}
+        dataSource={products}
+        columns={columns}
+      />
+      <Button onClick={() => onCreate()} type="primary">
+        新增
+      </Button>
+      <Button onClick={() => onUpdate()} type="primary">
+        修改
+      </Button>
+    </div>
   )
 }
 
 ProductList.propTypes = {
-  onDelete: PropTypes.func.isRequired,
-  products: PropTypes.array.isRequired
+  onDelete: PropTypes.func,
+  products: PropTypes.array
 }
 
 export default ProductList
