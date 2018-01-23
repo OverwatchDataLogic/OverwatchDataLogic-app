@@ -19,7 +19,7 @@ export default class AppHeader extends Component {
     } else if (/^competitors/.test(path)) {
       activeMenuItem = 'competitors'
     } else if (/^me/.test(path)) {
-      activeMenuItem = 'me'
+      activeMenuItem = 'account'
     } else if (path === '/') {
       activeMenuItem = 'home'
     }
@@ -52,16 +52,16 @@ export default class AppHeader extends Component {
               style={{ lineHeight: '64px' }}
             >
               <Menu.Item key="home">
-                <Link to="/home">主页</Link>
+                <Link to="/home/">主页</Link>
               </Menu.Item>
               <Menu.Item key="sports">
-                <Link to="/sports">赛事</Link>
+                <Link to="/sports/">赛事</Link>
               </Menu.Item>
               <Menu.Item key="competitors">
-                <Link to="/competitors">选手</Link>
+                <Link to="/competitors/">选手</Link>
               </Menu.Item>
-              <Menu.Item key="me">
-                <Link to="/me">我的</Link>
+              <Menu.Item key="account">
+                <Link to="/account/">我的</Link>
               </Menu.Item>
             </Menu>
           </Col>

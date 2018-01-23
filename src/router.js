@@ -17,14 +17,32 @@ const Routers = function RouterConfig({ history, app }) {
     models: () => [import('./models/products')],
     component: () => import('./routes/Products/')
   })
+  const AccountPage = dynamic({
+    app,
+    models: () => [import('./models/products')],
+    component: () => import('./routes/Account/')
+  })
+  const CompetitorsPage = dynamic({
+    app,
+    models: () => [import('./models/products')],
+    component: () => import('./routes/Competitors/')
+  })
+  const SportsPage = dynamic({
+    app,
+    models: () => [import('./models/products')],
+    component: () => import('./routes/Sports/')
+  })
 
   return (
     <ConnectedRouter history={history}>
       <AppLayout>
         <Switch>
           <Route exact path="/" render={() => <Redirect to="/home" />} />
-          <Route path="/home" exact component={HomePage} />
-          <Route path="/products" exact component={ProductsPage} />
+          <Route path="/home/" exact component={HomePage} />
+          <Route path="/products/" exact component={ProductsPage} />
+          <Route path="/account/" exact component={AccountPage} />
+          <Route path="/competitors/" exact component={CompetitorsPage} />
+          <Route path="/sports/" exact component={SportsPage} />
         </Switch>
       </AppLayout>
     </ConnectedRouter>
