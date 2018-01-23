@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'dva'
 import styles from './Home.css'
 
-const HomePage = ({ dispatch }) => {
+const Home = ({ dispatch }) => {
   return (
     <div>
       <h1 className={styles.title}>Yay! Welcome to dva!</h1>
@@ -24,6 +24,6 @@ const HomePage = ({ dispatch }) => {
   )
 }
 
-HomePage.propTypes = {}
+Home.propTypes = {}
 
-export default connect()(HomePage)
+export default connect()(Home)

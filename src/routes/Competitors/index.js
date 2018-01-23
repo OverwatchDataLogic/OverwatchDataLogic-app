@@ -1,7 +1,8 @@
 import React from 'react'
+import { connect } from 'dva'
 
 const Competitors = ({ dispatch }) => {
   return <div>CompetitorsPage</div>
 }
 
-export default Competitors
+export default connect()(Competitors)

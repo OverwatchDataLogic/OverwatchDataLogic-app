@@ -11,14 +11,13 @@ export default class AppHeader extends Component {
     const module = location.pathname
       .replace(/(^\/|\/$)/g, '')
       .split('/')
-      .slice(0, -1)
       .join('/')
     let activeMenuItem = module || 'home'
     if (/^sports/.test(path)) {
       activeMenuItem = 'sports'
     } else if (/^competitors/.test(path)) {
       activeMenuItem = 'competitors'
-    } else if (/^me/.test(path)) {
+    } else if (/^account/.test(path)) {
       activeMenuItem = 'account'
     } else if (path === '/') {
       activeMenuItem = 'home'
@@ -52,16 +51,16 @@ export default class AppHeader extends Component {
               style={{ lineHeight: '64px' }}
             >
               <Menu.Item key="home">
-                <Link to="/home/">主页</Link>
+                <Link to="/home">主页</Link>
               </Menu.Item>
               <Menu.Item key="sports">
-                <Link to="/sports/">赛事</Link>
+                <Link to="/sports">赛事</Link>
               </Menu.Item>
               <Menu.Item key="competitors">
-                <Link to="/competitors/">选手</Link>
+                <Link to="/competitors">选手</Link>
               </Menu.Item>
               <Menu.Item key="account">
-                <Link to="/account/">我的</Link>
+                <Link to="/account">我的</Link>
               </Menu.Item>
             </Menu>
           </Col>

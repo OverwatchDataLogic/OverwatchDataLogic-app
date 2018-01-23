@@ -9,27 +9,22 @@ const { ConnectedRouter } = routerRedux
 const Routers = function RouterConfig({ history, app }) {
   const HomePage = dynamic({
     app,
-    models: () => [import('./models/example')],
+    models: () => [import('./models/home')],
     component: () => import('./routes/Home/')
-  })
-  const ProductsPage = dynamic({
-    app,
-    models: () => [import('./models/products')],
-    component: () => import('./routes/Products/')
   })
   const AccountPage = dynamic({
     app,
-    models: () => [import('./models/products')],
+    models: () => [import('./models/account')],
     component: () => import('./routes/Account/')
   })
   const CompetitorsPage = dynamic({
     app,
-    models: () => [import('./models/products')],
+    models: () => [import('./models/competitors')],
     component: () => import('./routes/Competitors/')
   })
   const SportsPage = dynamic({
     app,
-    models: () => [import('./models/products')],
+    models: () => [import('./models/sports')],
     component: () => import('./routes/Sports/')
   })
 
@@ -38,11 +33,10 @@ const Routers = function RouterConfig({ history, app }) {
       <AppLayout>
         <Switch>
           <Route exact path="/" render={() => <Redirect to="/home" />} />
-          <Route path="/home/" exact component={HomePage} />
-          <Route path="/products/" exact component={ProductsPage} />
-          <Route path="/account/" exact component={AccountPage} />
-          <Route path="/competitors/" exact component={CompetitorsPage} />
-          <Route path="/sports/" exact component={SportsPage} />
+          <Route path="/home" exact component={HomePage} />
+          <Route path="/account" exact component={AccountPage} />
+          <Route path="/competitors" exact component={CompetitorsPage} />
+          <Route path="/sports" exact component={SportsPage} />
         </Switch>
       </AppLayout>
     </ConnectedRouter>
