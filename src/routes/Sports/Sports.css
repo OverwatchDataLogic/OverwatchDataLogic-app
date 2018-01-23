@@ -1,0 +1,12 @@
+.sports {
+}
+.sports .ant-card {
+  position: relative;
+  margin-bottom: 20px;
+}
+.sports .in_button {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%);
+}
