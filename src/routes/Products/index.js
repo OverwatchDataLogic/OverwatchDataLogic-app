@@ -1,6 +1,6 @@
 import { connect } from 'dva'
 import uuidv1 from 'uuid/v1'
-import ProductList from '../components/ProductList'
+import ProductList from '../../components/ProductList'
 
 const ProductsPage = ({ dispatch, products, onDelete, onCreate, onUpdate }) => {
   return (
