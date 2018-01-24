@@ -16,7 +16,7 @@
 
 2. 搜索并安装 『Settings Sync』插件，该插件用于同步 VS Code 配置的插件，VS Code 本身不带同步功能
 
-3. 插件安装成功后，使用 Shift + Alt + D ，顶部会弹出两次文本框，相继输入『51c79a29343386a5329b9e5ffa45e848f6b15487』，『255f1b9fc49254037dea9940ddfab62d』，等待 VS Code 更新配置完成
+3. 插件安装成功后，使用 Shift + Alt + D ，顶部会弹出两次文本框，相继输入『f85e00730b957c7734688a450d04d7fba5c70dde』，『255f1b9fc49254037dea9940ddfab62d』，等待 VS Code 更新配置完成
 
 ### 重要插件说明
 
