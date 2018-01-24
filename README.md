@@ -4,7 +4,7 @@
 
 ## 前端开发风格指南
 
-本项目采用React开发，基于[dva](https://github.com/dvajs/dva)前端开发框架。
+本项目采用 React 开发，基于[dva](https://github.com/dvajs/dva)前端开发框架。
 
 ## 开发工具
 
@@ -16,7 +16,7 @@
 
 2. 搜索并安装 『Settings Sync』插件，该插件用于同步 VS Code 配置的插件，VS Code 本身不带同步功能
 
-3. 插件安装成功后，使用Shift + Alt + D ，顶部会弹出两次文本框，相继输入『46b6f96dab375dbb96c0c04067955181cb0d4d6b』，『255f1b9fc49254037dea9940ddfab62d』，等待 VS Code 更新配置完成
+3. 插件安装成功后，使用 Shift + Alt + D ，顶部会弹出两次文本框，相继输入『51c79a29343386a5329b9e5ffa45e848f6b15487』，『255f1b9fc49254037dea9940ddfab62d』，等待 VS Code 更新配置完成
 
 ### 重要插件说明
 
